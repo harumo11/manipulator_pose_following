@@ -211,7 +211,7 @@ int main(int argc, char **argv) {
   // --- Setup publishers
   ros::Publisher streaming_pub =
       nh_pose_following.advertise<trajectory_msgs::JointTrajectory>(
-          "joint_command", 10);
+          "joint_command", 1);
 
   // --- Setup topic subscritions
   ros::Subscriber sub_dpose = nh_pose_following.subscribe(
@@ -290,7 +290,7 @@ int main(int argc, char **argv) {
   std::ostream stream(nullptr);
   std::stringbuf str;
   stream.rdbuf(&str);
-  kinematic_state.printTransform(frame_tf, stream);
+  //kinematic_state.printTransform(frame_tf, stream);
   ROS_DEBUG_STREAM("transform: " << str.str());
   std::ostream stream2(nullptr);
   std::stringbuf str2;
@@ -356,7 +356,7 @@ int main(int argc, char **argv) {
       std::ostream stream(nullptr);
       std::stringbuf str;
       stream.rdbuf(&str);
-      kinematic_state.printTransform(frame_tf, stream);
+      //kinematic_state.printTransform(frame_tf, stream);
       ROS_DEBUG_STREAM_NAMED("stream_pose", "EEF-pose: " << str.str());
 
       // Time since last point:

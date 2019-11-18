@@ -17,7 +17,7 @@ find_package(catkin REQUIRED COMPONENTS
   cmake_modules
 )
 
-find_package (Eigen REQUIRED)
+#find_package (Eigen REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -118,7 +118,6 @@ catkin_package(
     moveit_core
     moveit_ros_planning_interface
     moveit_ros_manipulation
-    DEPENDS Eigen
 )
 
 ###########
@@ -130,7 +129,6 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
-  ${Eigen_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -174,7 +172,6 @@ target_link_libraries(pose_following
 )
 target_link_libraries(smooth_jogging
   ${catkin_LIBRARIES}
-  ${Eigen_LIBRARIES}
 )
 target_link_libraries(kb_jogging
   ${catkin_LIBRARIES}
