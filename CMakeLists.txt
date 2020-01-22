@@ -147,6 +147,7 @@ include_directories(
 add_executable(test_traject src/test_traject_node.cpp)
 add_executable(moveit_interface src/moveit_interface_node.cpp)
 add_executable(pose_following src/pose_following_node.cpp)
+add_executable(pose_following_jaco_node src/pose_following_node_jaco.cpp)
 add_executable(smooth_jogging src/smooth_jogging_node.cpp)
 add_executable(kb_jogging src/kb_jogging_node.cpp)
 
@@ -168,6 +169,9 @@ target_link_libraries(moveit_interface
   ${catkin_LIBRARIES}
 )
 target_link_libraries(pose_following
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(pose_following_jaco_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(smooth_jogging
