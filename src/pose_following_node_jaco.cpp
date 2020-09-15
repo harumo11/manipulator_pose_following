@@ -232,6 +232,7 @@ int main(int argc, char **argv) {
 
   // --- Obtain parameters
   int rate_hz = 100;
+  //int rate_hz = 40;
   nh_pose_following.getParam("pose_following/rate", rate_hz);
   ros::Rate loop_rate(rate_hz);
 
@@ -243,7 +244,7 @@ int main(int argc, char **argv) {
   double k0 = 0.001;
   nh_pose_following.getParam("pose_following/k0", k0);
 
-  double theta_d_limit = 3.14;
+  double theta_d_limit = 4.0;
   nh_pose_following.getParam("pose_following/theta_d_lim", theta_d_limit);
 
   double dt_pose_lim = 0.5;
